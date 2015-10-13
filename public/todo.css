@@ -1,0 +1,30 @@
+.done-true{
+	text-decoration: line-through;
+	color: gray;
+}
+
+tbody tr:nth-child(odd) {
+	background: #EAF4FF;
+} 
+
+td button {
+  visibility: hidden;
+}
+
+tr {
+	/*border-top: 1px dashed gray;*/
+	border-bottom: 1px dashed gray;
+	padding: 5px;
+} 
+
+tbody tr :hover button {
+   visibility: visible; /* On :hover of div show button */
+}
+
+table {
+	font-size: large;
+}
+
+form {
+	padding-bottom: 10px;
+}
