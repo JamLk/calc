@@ -10,6 +10,7 @@ function mainController($scope, $http, $filter) {
 	$scope.answer = "0";
 //random comment
 // comment 2
+//nice
 	$scope.numberClicked = function(numberPushed) {
 		if ($scope.displayValue == "0") {
 			$scope.displayValue = numberPushed;
