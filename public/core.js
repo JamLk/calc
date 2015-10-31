@@ -1,5 +1,6 @@
 var scotchTodo = angular.module('calc', []);
 //shit dawg
+//fourth
 function mainController($scope, $http, $filter) {
 	$scope.displayNumber = 0;
 	$scope.displayNumber2 = 0;
