@@ -9,6 +9,7 @@ function mainController($scope, $http, $filter) {
 	$scope.operatorSign = "";
 	$scope.answer = "0";
 //random comment
+// comment 2
 	$scope.numberClicked = function(numberPushed) {
 		if ($scope.displayValue == "0") {
 			$scope.displayValue = numberPushed;
