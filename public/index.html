@@ -1,23 +1,20 @@
 <!doctype html>
 
 <!-- ASSIGN OUR ANGULAR MODULE -->
-<html ng-app="scotchTodo">
+<html ng-app="calc">
 <head>
 	<!-- META -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
 
-	<title>Node/Angular Todo App</title>
+	<title>Node/Angular Calc App</title>
 
 	<!-- SCROLLS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
-	<link rel="stylesheet" href="todo.css">	
+	<link rel="stylesheet" href="calc.css">	
 	<style>
 		html 					{ overflow-y:scroll; }
 		body 					{ padding-top:50px; text-align: center; }
-		#todo-list 				{ margin-bottom:30px; }
-		#todo-form 	 			{ margin-bottom:30px; }
-		td, th					{ text-align: left; }
 	</style>
 
 	<!-- SPELLS -->
@@ -27,32 +24,43 @@
 </head>
 <!-- SET THE CONTROLLER AND GET ALL TODOS WITH INITIALIZE FUNCTION -->
 <body ng-controller="mainController">
-	<h1>DO IT!</h1>
-	<form name="form" ng-submit="grab()">
-		<input type="text"ng-model="todoText"placeholder=" enter shit"id="taskTxt" required></input>
-		<button id="addBn" ng-disable="form.$invaild">add to list</button>
-	</form>
-	<button ng-click="clearDone()">Clear Done</button>
-	<button ng-click="newList()">New List</button>
-	<br></br>
-	<table name="taskTable" align="center">
-		<thead></thead>
-		<tbody>
-			<tr ng-repeat="todo in list">
-				<td><input type="checkbox" ng-model="todo.done"></input></td>
-				<td class="done-{{todo.done}}">
-					<form name="editTask" ng-submit="edit($todo.taskName)" ng-hide"asd">
-						<div ng-click="asd = !asd" ng-init="asd = false" ng-hide="asd">{{todo.taskName}}</div>
-						<input type="text" ng-model="todo.taskName" ng-show="asd" ng-sumbit="asd = !asd" ng-init="asd = ture">
-					</form>
-				</td>
-				<td>
-					<button ng-click="deleteBn($index)">x</button>
-				</td>
-			</tr>
-		</tbody>
-
-	</table>
-
+	<div id="calculator">
+		<div id="screen">{{displayValue}}</div>
+		<div id="row1">
+			<button class="myButtonRed" ng-click ="clearCE()">CE</button>
+			<button class="myButtonOrange" ng-click ="clear()">C</button>
+			<button class="myButtonOrange" ng-click ="del()">DEL</button>
+			<button class="myButtonOrange" ng-click ='save()'>M</button>
+		</div>
+		<div id="row2">
+			<button class="myButton" ng-click ="numberClicked('7')">7</button>
+			<button class="myButton" ng-click ="numberClicked('8')">8</button>
+			<button class="myButton" ng-click ="numberClicked('9')">9</button>
+			<button class="myButtonBlue" ng-click ="opSign('×')">×</button>
+		</div>
+		<div id="row3">
+			<button class="myButton" ng-click ="numberClicked('4')">4</button>
+			<button class="myButton" ng-click ="numberClicked('5')">5</button>
+			<button class="myButton" ng-click ="numberClicked('6')">6</button>
+			<button class="myButtonBlue" ng-click ="opSign('÷')">÷</button>
+		</div>
+		<div id="row4">
+			<button class="myButton" ng-click ="numberClicked('1')">1</button>
+			<button class="myButton" ng-click ="numberClicked('2')">2</button>
+			<button class="myButton" ng-click ="numberClicked('3')">3</button>
+			<button class="myButtonBlue" ng-click ="opSign('-')">-</button>
+		<div>
+		<div id ="row5">
+			<button class="myButton" ng-click ="numberClicked('.')">.</button>
+			<button class="myButton" ng-click ="numberClicked('0')">0</button>
+			<button class="myButtonGreen" ng-click ="solve()">=</button>
+			<button class="myButtonBlue" ng-click ="opSign('+')">+</button>
+		</div>
+	</div>
+	<br><br> 
+	<div id="debug"> Debug
+		<div> displayValue: {{displayValue}} memory: {{memory}} </div>
+		<div> number: {{displayNumber}} number2: {{displayNumber2}} answer: {{answer}}</div>
+	</div>
 </body>
 </html>
