@@ -7,7 +7,7 @@ function mainController($scope, $http, $filter) {
 	$scope.memory = "0";
 	$scope.operatorSign = "";
 	$scope.answer = "0";
-
+//random comment
 	$scope.numberClicked = function(numberPushed) {
 		if ($scope.displayValue == "0") {
 			$scope.displayValue = numberPushed;
